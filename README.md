@@ -54,7 +54,7 @@ project-root/
    ```bash
    git clone https://github.com/dinhbachnguyen/E-Learning-App.git
    cd elearning-project
-```
+   ```
 
 2. **Backend**:
 

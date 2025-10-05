@@ -23,7 +23,7 @@
 - **Frontend**: Angular, TypeScript, Bootstrap  
 - **Backend**: Java, Spring Boot, Spring Data JPA, H2 Database  
 - **API**: RESTful endpoints for users, courses, and enrollments  
-- **Build Tools**: Maven/Gradle for backend, Angular CLI for frontend  
+- **Build Tools**: Maven for backend, Angular CLI for frontend  
 
 ---
 
@@ -32,8 +32,8 @@
 ```
 
 project-root/
-├─ frontend/       ← Angular application
-└─ backend/        ← Spring Boot application
+├─ elearning-project/        ← Angular application
+  └─ elearning-backend/      ← Spring Boot application
 
 ```
 
@@ -46,27 +46,27 @@ project-root/
 - Java 17+  
 - Node.js 16+  
 - Angular CLI 16+  
-- Maven or Gradle  
+- Maven
 
 ### Installation
 
 1. Clone the repository:  
    ```bash
-   git clone <your-repo-url>
-   cd project-root
+   git clone https://github.com/dinhbachnguyen/E-Learning-App.git
+   cd elearning-project
 ```
 
 2. **Backend**:
 
    ```bash
-   cd backend
-   ./mvnw spring-boot:run   # or use gradle if applicable
+   cd elearning-backend
+   mvn spring-boot:run   
    ```
 
 3. **Frontend**:
 
    ```bash
-   cd ../frontend
+   cd ../elearning-project
    npm install
    ng serve
    ```
@@ -80,8 +80,8 @@ project-root/
 * Register as a **Student** or **Instructor**.
 * Instructors can create new courses and manage existing ones.
 * Students can enroll in courses and view enrolled students.
-* Navbar dynamically updates to show the logged-in user and logout option.
-* Duplicate enrollments are prevented and give a friendly message.
+* UI dynamically updates to show the current user and logout option.
+* Duplicate enrollments are prevented and students are notified if they are already enrolled.
 
 ---
 

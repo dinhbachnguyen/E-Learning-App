@@ -1,59 +1,91 @@
-# ElearningProject
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.3.
+# E-Learning Platform
 
-## Development server
+**E-Learning Platform** is a full-stack web application designed for online learning. It allows instructors to create and manage courses while students can browse, enroll, and track their learning progress. Built with **Angular** for the frontend and **Spring Boot** for the backend, this app provides a responsive, interactive experience.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+## Features
+
+- **User Authentication**: Secure login and registration for students and instructors.  
+- **Instructor Dashboard**: Create, edit, and manage courses.  
+- **Student Dashboard**: Browse available courses and enroll.  
+- **Course Enrollment**: Prevent duplicate enrollments and manage enrolled students.  
+- **Real-time Updates**: Navbar and course information automatically update on login/logout.  
+- **Responsive UI**: Mobile-friendly design using Bootstrap.  
+- **Backend**: Spring Boot REST API with H2 in-memory database (or other relational DB).  
+- **CORS Support**: Smooth interaction between frontend and backend during development.
+
+---
+
+## Tech Stack
+
+- **Frontend**: Angular, TypeScript, Bootstrap  
+- **Backend**: Java, Spring Boot, Spring Data JPA, H2 Database  
+- **API**: RESTful endpoints for users, courses, and enrollments  
+- **Build Tools**: Maven/Gradle for backend, Angular CLI for frontend  
+
+---
+
+## Project Structure
+
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+project-root/
+├─ frontend/       ← Angular application
+└─ backend/        ← Spring Boot application
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
+## Getting Started
+
+### Prerequisites
+
+- Java 17+  
+- Node.js 16+  
+- Angular CLI 16+  
+- Maven or Gradle  
+
+### Installation
+
+1. Clone the repository:  
+   ```bash
+   git clone <your-repo-url>
+   cd project-root
 ```
 
-## Building
+2. **Backend**:
 
-To build the project run:
+   ```bash
+   cd backend
+   ./mvnw spring-boot:run   # or use gradle if applicable
+   ```
 
-```bash
-ng build
-```
+3. **Frontend**:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+   ```bash
+   cd ../frontend
+   npm install
+   ng serve
+   ```
 
-## Running unit tests
+4. Open your browser at [http://localhost:4200](http://localhost:4200)
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+## Usage
 
-## Running end-to-end tests
+* Register as a **Student** or **Instructor**.
+* Instructors can create new courses and manage existing ones.
+* Students can enroll in courses and view enrolled students.
+* Navbar dynamically updates to show the logged-in user and logout option.
+* Duplicate enrollments are prevented and give a friendly message.
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## Notes
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+* The backend uses an **H2 in-memory database** by default; data is reset on restart.
+* For production, configure a persistent database like MySQL or PostgreSQL.

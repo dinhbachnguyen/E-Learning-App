@@ -1,0 +1,38 @@
+<div class="container mt-5">
+  <h2 class="mb-4">Courses</h2>
+
+  <div *ngIf="message" class="alert alert-success">{{ message }}</div>
+
+  <!-- Instructor: Create new course -->
+  <div *ngIf="currentUser?.role === 'INSTRUCTOR'" class="mb-5">
+    <h4>Create New Course</h4>
+    <div class="mb-3">
+      <input type="text" class="form-control mb-2" placeholder="Course Title" [(ngModel)]="newCourse.title">
+      <textarea class="form-control mb-2" placeholder="Description" [(ngModel)]="newCourse.description"></textarea>
+      <button class="btn btn-primary" (click)="createCourse()">Create Course</button>
+    </div>
+  </div>
+
+  <!-- List all courses -->
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let course of courses">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{ course.title }}</h5>
+          <p class="card-text">{{ course.description }}</p>
+          <p><strong>Instructor:</strong> {{ course.instructor?.name }}</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+          <button *ngIf="currentUser?.role === 'STUDENT'" class="btn btn-success w-100" (click)="enroll(course.id)">Enroll</button>
+          <!-- <button  class="btn btn-success w-100" (click)="enroll(course.id)">Enroll</button> -->
+        </div>
+          <a [routerLink]="['/course', course.id]" class="btn btn-primary" (click)="logCourseId(course.id)">
+           View Details
+          </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

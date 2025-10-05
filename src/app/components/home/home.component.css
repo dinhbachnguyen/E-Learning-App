@@ -1,0 +1,80 @@
+/* General container padding */
+.container {
+  max-width: 900px;
+}
+
+/* Main heading */
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #0d6efd; /* Bootstrap primary color */
+  margin-bottom: 20px;
+}
+
+/* Subheading / lead text */
+.lead {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+  transform: translateY(-2px);
+}
+
+.btn-success:hover {
+  background-color: #198754;
+  transform: translateY(-2px);
+}
+
+/* "Why Choose Us" Section */
+h3 {
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #0d6efd;
+}
+
+.row {
+  margin-top: 20px;
+}
+
+.col-md-4 {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.col-md-4:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Section headings inside columns */
+.col-md-4 h5 {
+  color: #0d6efd;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Paragraphs inside columns */
+.col-md-4 p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.container.mt-5.text-center {
+  background: linear-gradient(135deg, #e0f0ff, #ffffff);
+  padding: 40px;
+  border-radius: 12px;
+}

@@ -1,0 +1,23 @@
+<div class="container mt-5" *ngIf="course">
+  <h2>{{ course.title }}</h2>
+  <p>{{ course.description }}</p>
+  <p><strong>Instructor:</strong> {{ course.instructor?.name }}</p>
+
+  <div *ngIf="message" class="alert alert-success">{{ message }}</div>
+
+  <button *ngIf="currentUser?.role === 'STUDENT'" class="btn btn-success mb-3" (click)="enroll()">
+    Enroll in this course
+  </button>
+
+  <h4>Enrolled Students</h4>
+
+  <ul class="list-group" *ngIf="course.students && course.students.length > 0; else noStudents">
+    <li class="list-group-item" *ngFor="let student of course.students">
+      {{ student.name }} (Email: {{ student.email }})
+    </li>
+  </ul>
+
+  <ng-template #noStudents>
+    <li class="list-group-item text-muted">No students enrolled</li>
+  </ng-template>
+</div>

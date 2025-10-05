@@ -1,0 +1,30 @@
+/* Ensure body and root app fill viewport */
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Main content area (router-outlet) */
+router-outlet + * {
+  flex: 1 0 auto; /* Make content expand to fill space between navbar and footer */
+  padding: 20px 0;
+}
+
+/* Optional: add spacing between sections */
+.container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* Footer spacing */
+app-footer {
+  flex-shrink: 0; /* Footer always at bottom */
+}
+
+/* Smooth transitions for theme or hover effects */
+* {
+  transition: all 0.3s ease;
+}

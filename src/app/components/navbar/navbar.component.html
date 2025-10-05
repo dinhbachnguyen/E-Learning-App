@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container">
+    <!-- Brand on the left -->
+    <a class="navbar-brand" routerLink="/">E-Learning</a>
+
+    <!-- Toggler for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links on the right -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto"> <!-- ms-auto pushes links to the right -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/courses">Courses</a>
+        </li>
+
+        <ng-container *ngIf="currentUser; else guestLinks">
+          <li class="nav-item">
+            <span class="nav-link">👋 Hello, {{ currentUser.name }}</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-danger" href="#" (click)="logout()">Logout</a>
+          </li>
+        </ng-container>
+
+        <!-- If no user logged in -->
+        <ng-template #guestLinks>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/register">Register</a>
+          </li>
+        </ng-template>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
